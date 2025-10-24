@@ -1,0 +1,84 @@
+body {
+  font-family: sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+#drop-area {
+  border: 2px dashed #888;
+  border-radius: 8px;
+  padding: 40px;
+  margin: 20px 0;
+  cursor: pointer;
+  background: #fafafa;
+  transition: background 0.3s;
+}
+
+#drop-area.dragover {
+  background: #e0f7fa;
+  border-color: #00796b;
+}
+
+#convertBtn {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin: 20px 0;
+  cursor: pointer;
+  background: #00796b;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+}
+
+#preview img {
+  max-width: 100%;
+  margin: 20px 0;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+#downloadLink {
+  display: inline-block;
+  margin: 10px 0 30px;
+  padding: 8px 16px;
+  background: #0288d1;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+#history {
+  margin-top: 40px;
+  text-align: left;
+}
+
+#history-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+#history-list img {
+  width: 120px;
+  height: auto;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+  transition: transform 0.2s;
+}
+
+#history-list img:hover {
+  transform: scale(1.05);
+}

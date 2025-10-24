@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nostalgic Filter</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'hello_world_app/style.css' %}">
+</head>
+<body>
+
+  <main class="container">
+    <h1>Nostalgic Photo Maker</h1>
+    <p>Upload your image and make them nostalgic!</p>
+
+    <!-- ドラッグ＆ドロップエリア -->
+    <div id="drop-area">
+      <p>Drag and Drop images you want to process<br>or Click to browse your computer.</p>
+      <input type="file" id="fileInput" accept="image/*" hidden />
+    </div>
+
+    <!-- 変換ボタン -->
+    <button id="convertBtn">Process</button>
+
+    <!-- プレビューとダウンロード -->
+    <div id="preview"></div>
+    <a id="downloadLink" download="" style="display:none;">Download Processed Images</a>
+
+    <p id="statusMsg" style="color: gray;"></p>
+
+
+    <!-- 過去の生成画像リスト -->
+    <section id="history">
+      <h2>Latest processed Images</h2>
+      <div id="history-list">
+        {% if images %}
+          {% for image in images %}
+            <a href="{{ image.file.url }}" download>
+              <img src="{{ image.file.url }}" alt="generated image">
+            </a>
+          {% endfor %}
+        {% else %}
+          <p id="empty-msg">There is no photos processed yet.</p>
+        {% endif %}
+      </div>
+    </section>
+  </main>
+  <script src="{% static 'hello_world_app/script.js' %}"></script>
+</body>
+</html>
